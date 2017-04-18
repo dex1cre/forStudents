@@ -39,11 +39,13 @@ $(function() {
           },
           success: function(data) {
             if (data == "okay") {
-              $('.active').next('.ask_result').addClass('succes_ask');
-              $('.active').next('.ask_result').text('Правильно!)))');
+              $('.active').next('input').next('.ask_result').removeClass('bad_ask');
+              $('.active').next('input').next('.ask_result').addClass('succes_ask');
+              $('.active').next('input').next('.ask_result').text('Правильно!)))');
             } else {
-              $('.active').next('.ask_result').addClass('bad_ask');
-              $('.active').next('.ask_result').text(data);
+              $('.active').next('input').next('.ask_result').removeClass('succes_ask');
+              $('.active').next('input').next('.ask_result').addClass('bad_ask');
+              $('.active').next('input').next('.ask_result').text(data);
             }
           }
         });
