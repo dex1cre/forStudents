@@ -1,0 +1,7 @@
+.task {
+  display: none;
+}
+
+.task:first-child {
+  display: block;
+}

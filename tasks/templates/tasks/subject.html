@@ -1,0 +1,21 @@
+{% extends 'tasks/base.html' %}
+
+{% block subject %}
+<header>Задания №{{ number }}</header>
+<ul>
+  {% for task in tasks %}
+    <li class="task">
+      <h3>{{ task.description }}</h3>
+      <p>{{ task.variables }}</p>
+      <input type="text" name="ask-{{ forloop.counter }}" id="ask-{{ forloop.counter }}" placeholder="Введите сюда ответ, будьте внимательны">
+      <input type="text" name="dd" value="{{ task.id }}" style="display:none;">
+      <input type="submit" name="send" value="Проверить" class="click_ask">
+      <span class="ask_result"></span>
+      <button class="next_task">Следующее</button>
+    </li>
+  {% endfor %}
+  <li class="task">
+    <h3>Задания закончились!)</h3>
+  </li>
+</ul>
+{% endblock subject %}

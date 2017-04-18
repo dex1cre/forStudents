@@ -1,0 +1,19 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Micro-Time</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+  {% block index %}
+  {% endblock %}
+
+  {% block subject %}
+  {% endblock %}
+  <script src="{% static 'js/jquery-3.2.1.js' %}"></script>
+  <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>
