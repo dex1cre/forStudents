@@ -32,3 +32,13 @@ def subject(request):
     #     form = SubjectForm()
     #     subject = Subjects.objects.all()
     #     return render(request, 'tasks/subject.html', {'form': form, 'subject': subject})
+
+def new_task(request):
+    if request.method == "POST":
+        form = TaskForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('/new-task')
+    else:
+        form = TaskForm()
+        return render(request, 'tasks/new-task.html', {'form': form})
