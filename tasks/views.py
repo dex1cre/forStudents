@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import *
 from .forms import *
@@ -41,4 +41,24 @@ def new_task(request):
             return redirect('/new-task')
     else:
         form = TaskForm()
+        return render(request, 'tasks/new-task.html', {'form': form})
+
+def new_subject(request):
+    if request.method == 'POST':
+        form = SubjectForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('/new-subject')
+    else:
+        form = SubjectForm()
+        return render(request, 'tasks/new-task.html', {'form': form})
+
+def new_variant(request):
+    if request.method == "POST":
+        form = VariantForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('/new-variant')
+    else:
+        form = VariantForm()
         return render(request, 'tasks/new-task.html', {'form': form})
