@@ -20,6 +20,7 @@ function csrfSafeMethod(method) {
 }
 
 $(function() {
+
   $('.click_ask').click(function() {
     $(this).addClass('active');
     var csrf_token = getCookie('csrftoken');

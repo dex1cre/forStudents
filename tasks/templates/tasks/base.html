@@ -17,5 +17,13 @@
   </div>
   <script src="{% static 'js/jquery-3.2.1.js' %}"></script>
   <script src="{% static 'js/script.js' %}"></script>
+  <script>
+  $(function() {
+    $('.task p').each(function(i, item) {
+      var html = $(item).text();
+      $(item).html(html);
+    });
+  });
+  </script>
 </body>
 </html>
